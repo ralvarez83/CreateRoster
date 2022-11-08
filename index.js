@@ -9,7 +9,7 @@ var fileName = process.argv.slice(2)[0];
 console.log("Fichero a procesar: ", fileName);
 
 if (fileName.toLowerCase() == "ayuda"){
-    console.log("Aquí está: las columnas del Excel deben ser (nombre, apellidos, email, empresa)");
+    console.log("Aquí está: las columnas del Excel deben ser (Nombre, Apellidos, Email, Empresa)");
     return;
 }
 
@@ -17,16 +17,16 @@ var rowPos = 0;
 xlsxFile(fileName).then((rows) => {
     for (colPos in rows[0]){
         switch (rows[0][colPos]) {
-            case "nombre":
+            case "Nombre":
                 posicionesColumnas.nombre = colPos;
                 break;
-            case "apellidos":
+            case "Apellidos":
                 posicionesColumnas.apellidos = colPos;
                 break;
-            case "email":
+            case "Email":
                 posicionesColumnas.email = colPos;
                 break;
-            case "empresa":
+            case "Empresa":
                 posicionesColumnas.empresa = colPos;
                 break;                
             default:
