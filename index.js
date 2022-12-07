@@ -17,13 +17,13 @@ var rowPos = 0;
 xlsxFile(fileName).then((rows) => {
     for (colPos in rows[0]){
         switch (rows[0][colPos]) {
-            case "Nombre":
+            case "Nombre (obligatorio)":
                 posicionesColumnas.nombre = colPos;
                 break;
-            case "Apellidos":
+            case "Apellidos (obligatorio)":
                 posicionesColumnas.apellidos = colPos;
                 break;
-            case "Email":
+            case "Email (opcional si el Usuario esta relleno)":
                 posicionesColumnas.email = colPos;
                 break;
             case "Empresa":
@@ -33,18 +33,18 @@ xlsxFile(fileName).then((rows) => {
                 break;
         }
     }
-
-    for (i in rows){
-        if (i > 0){
-            csv = csv.concat("\n").concat(rows[i][posicionesColumnas.email].trim() + "," + rows[i][posicionesColumnas.nombre].trim() + "," + rows[i][posicionesColumnas.apellidos].trim() + "," + rows[i][posicionesColumnas.email].trim() + ",-," + rows[i][posicionesColumnas.empresa].trim())
-        }
-    }
     
     console.log("COLUMNAS DETECTADAS EN LAS POSICIONES:")
     console.log("\tNombre: ", posicionesColumnas.nombre);
     console.log("\tApellidos: ", posicionesColumnas.apellidos);
     console.log("\tEmail: ", posicionesColumnas.email);
     console.log("\tEmpresa: ", posicionesColumnas.empresa);
+
+    for (i in rows){
+        if (i > 0){
+            csv = csv.concat("\n").concat(rows[i][posicionesColumnas.email].trim() + "," + rows[i][posicionesColumnas.nombre].trim() + "," + rows[i][posicionesColumnas.apellidos].trim() + "," + rows[i][posicionesColumnas.email].trim() + ",-," + rows[i][posicionesColumnas.empresa].trim())
+        }
+    }
 
     const fileData = new Uint8Array(Buffer.from(csv));
     fs.writeFile("roster.csv", fileData, function(err) {

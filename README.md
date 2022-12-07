@@ -60,3 +60,5 @@ lo siguiente:
 Se creará en la carpeta de la aplicación un fichero llamado: roster.csv
 
 Espero que sirva ;)
+
+NOTAS: Si hay datos en alguna fila que no correcponde a un alumno puede dar un error de ejecución.
