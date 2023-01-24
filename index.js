@@ -17,13 +17,13 @@ var rowPos = 0;
 xlsxFile(fileName).then((rows) => {
     for (colPos in rows[0]){
         switch (rows[0][colPos]) {
-            case "Nombre (obligatorio)":
+            case "Nombre":
                 posicionesColumnas.nombre = colPos;
                 break;
-            case "Apellidos (obligatorio)":
+            case "Apellidos":
                 posicionesColumnas.apellidos = colPos;
                 break;
-            case "Email (opcional si el Usuario esta relleno)":
+            case "Email":
                 posicionesColumnas.email = colPos;
                 break;
             case "Empresa":
