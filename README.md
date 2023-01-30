@@ -14,18 +14,17 @@ Se crea un csv con los siguientes campos:
     attendee company
 
 Para ello parte desde un fichero Excel que al menos tenga los siguientes campos:
-    nombre
-    apellidos
-    email
-    empresa
+    Nombre
+    Apellidos
+    Email
+    Empresa
 
 El orden de los campos es indifeente y si hay campos entre medias, antes o después también, la aplicación
 detectará la posición de cada campo (sólo la primera aparición, si hay más de uno el segundo se ignorará)
 
 INSTALACIÓN
 ---------------------
-Es REQUISITO PREVIO tener instalada la versión de node 12.x (https://nodejs.org/dist/latest-v12.x/) se ha 
-desarrollado con esta versión por lo que debería funcionar con futuras pero pueden surgir problemas. 
+Es REQUISITO PREVIO tener instalada la versión de node 12.x (https://nodejs.org/dist/latest-v12.x/) se ha desarrollado con esta versión por lo que debería funcionar con futuras pero pueden surgir problemas. 
 
 Para saber la versión de node instalada ejecutar en la línea de comandos: node -v 
 Si es una versión superior avisar a Rubén.
